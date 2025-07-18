@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { ArrowLeft, Github, Calendar, Smartphone, Download, Star, Users, TrendingUp, Award } from "lucide-react"
+import { Github, Calendar, Smartphone, Download, Star, Users, TrendingUp, Award } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
@@ -222,52 +222,54 @@ export function ProjectDetailClient({ project }: ProjectDetailClientProps) {
 
                 {/* Platform Selector */}
                 {project.platforms.length > 1 &&
-  project.platforms.some(
-    (platform) =>
-      project.screenshots &&
-      Array.isArray(project.screenshots[platform]) &&
-      project.screenshots[platform].length > 0
-  ) && (
-    <div className="flex gap-3 mb-8">
-      {project.platforms.map((platform) =>
-        project.screenshots &&
-        Array.isArray(project.screenshots[platform]) &&
-        project.screenshots[platform].length > 0 ? (
-          <Button
-            key={platform}
-            variant={selectedPlatform === platform ? "default" : "outline"}
-            onClick={() => setSelectedPlatform(platform)}
-            className={`flex items-center gap-2 transition-all duration-300 ${selectedPlatform === platform
-              ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg"
-              : "bg-white/50 dark:bg-slate-700/50 hover:bg-blue-50 dark:hover:bg-slate-600"
-              }`}
-          >
-            <Smartphone className="h-4 w-4" />
-            {platform}
-          </Button>
-        ) : null
-      )}
-    </div>
-)}
+                  project.platforms.some(
+                    (platform) =>
+                      project.screenshots &&
+                      Array.isArray(project.screenshots[platform]) &&
+                      project.screenshots[platform].length > 0
+                  ) && (
+                    <div className="flex gap-3 mb-8">
+                      {project.platforms.map((platform) =>
+                        project.screenshots &&
+                          Array.isArray(project.screenshots[platform]) &&
+                          project.screenshots[platform].length > 0 ? (
+                          <Button
+                            key={platform}
+                            variant={selectedPlatform === platform ? "default" : "outline"}
+                            onClick={() => setSelectedPlatform(platform)}
+                            className={`flex items-center gap-2 transition-all duration-300 ${selectedPlatform === platform
+                              ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg"
+                              : "bg-white/50 dark:bg-slate-700/50 hover:bg-blue-50 dark:hover:bg-slate-600"
+                              }`}
+                          >
+                            <Smartphone className="h-4 w-4" />
+                            {platform}
+                          </Button>
+                        ) : null
+                      )}
+                    </div>
+                  )}
 
                 {/* Screenshots Grid */}
                 {currentScreenshots.length > 0 && (
-                  <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                    {currentScreenshots.map((screenshot, index) => (
-                      <div
-                        key={index}
-                        className="group relative rounded-2xl hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl"
-                      >
-                        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                        <Image
-                          src={screenshot || "/placeholder.svg"}
-                          alt={`${project.name} ${selectedPlatform} screenshot ${index + 1}`}
-                          width={300}
-                          height={600}
-                          className="w-full h-full object-contain rounded-xl relative z-10"
-                        />
-                      </div>
-                    ))}
+                  <div className="overflow-x-auto">
+                    <div className="flex gap-6 pb-2 snap-x snap-mandatory">
+                      {currentScreenshots.map((screenshot, index) => (
+                        <div
+                          key={index}
+                          className="group relative min-w-[180px] md:min-w-[300px] h-[360px] md:h-[600px] rounded-2xl hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl bg-white/80 dark:bg-slate-800/80 snap-center"
+                        >
+                          <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                          <Image
+                            src={screenshot || "/placeholder.svg"}
+                            alt={`${project.name} ${selectedPlatform} screenshot ${index + 1}`}
+                            width={300}
+                            height={600}
+                            className="w-full h-full object-contain rounded-xl relative z-10"
+                          />
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 )}
               </CardContent>
@@ -347,8 +349,8 @@ export function ProjectDetailClient({ project }: ProjectDetailClientProps) {
                         className={`p-2 rounded-lg ${platform === "Android"
                           ? "bg-gradient-to-r from-green-500 to-green-600"
                           : platform === "iOS" ? "bg-gradient-to-r from-blue-500 to-blue-600"
-                          : platform === "Web" ? "bg-gradient-to-r from-gray-600 to-gray-700 hover:from-gray-700 hover:to-gray-800"
-                          : ""
+                            : platform === "Web" ? "bg-gradient-to-r from-gray-600 to-gray-700 hover:from-gray-700 hover:to-gray-800"
+                              : ""
                           } text-white`}
                       >
                         {platform === "Android" ? (
