@@ -2,6 +2,7 @@ export interface PersonalInfo {
   name: string
   title: string
   summary: string
+  about: string
   email: string
   phone: string
   location: string
@@ -32,10 +33,11 @@ export interface Project {
   tech: string[]
   platforms: string[]
   type: string
+  projectIcon?: string
   storeLinks: {
-    platform: "Android" | "iOS"
+    platform: string  // e.g., "Android", "iOS", "Web"
     url: string
-    store: "Google Play" | "App Store"
+    store: string   // e.g., "Google Play", "App Store", "Web"
   }[]
   github?: string
   website?: string
@@ -51,7 +53,7 @@ export interface Project {
     rating?: number
     reviews?: string
   }
-  company: "Genetech Solutions" | "Minhasoft" | "Freelance Client"
+  company: string
 }
 
 export interface OpenSourceProject {
@@ -101,8 +103,9 @@ export interface Skill {
 
 export const personalInfo: PersonalInfo = {
   name: "Muhammad Zeeshan",
-  title: "Software Developer & Mobile App Specialist",
-  summary:
+  title: "Software Engineer & Mobile App Specialist",
+  summary: "A passionate Software Developer 🚀 having an experience of building Web and Mobile applications with Flutter, React Native and Native Android Platform and some other cool libraries and frameworks.",
+  about:
     "An innovative software developer with 5+ years of experience with expertise in Mobile Application Development. Passionate about developing software programs that expedite the efficiency and effectiveness of organisational success. With my leadership skills, I can manage teams to build software programs. Critical thinker, problem solver, and innovative creator to develop software that is customized to meet a company's organizational needs and success.",
   email: "zeeshanayaz1@gmail.com",
   phone: "(+92) 312 2309493",
@@ -115,7 +118,9 @@ export const personalInfo: PersonalInfo = {
 
 export const skills: Skill[] = [
   { name: "Java/Kotlin", category: "programming", icon: "Code" },
-  { name: "Flutter/Dart", category: "framework", icon: "Smartphone" },
+  { name: "Flutter/Dart", category: "framework", icon: "Code" },
+  { name: "React Native", category: "framework", icon: "Code" },
+  { name: "Python", category: "framework", icon: "Code" },
   { name: "SQL", category: "database", icon: "Database" },
   { name: "Firebase", category: "database", icon: "Flame" },
   { name: "Supabase", category: "database", icon: "Zap" },
@@ -123,8 +128,9 @@ export const skills: Skill[] = [
   { name: "Android Development", category: "platform", icon: "Smartphone" },
   { name: "iOS Development", category: "platform", icon: "Smartphone" },
   { name: "REST APIs", category: "tool", icon: "Globe" },
-  { name: "UI/UX Design", category: "tool", icon: "Palette" },
+  { name: "Figma", category: "tool", icon: "Palette" },
   { name: "Cross-platform Development", category: "framework", icon: "Monitor" },
+  { name: "Play Store Deployment", category: "platform", icon: "Upload" },
   { name: "App Store Deployment", category: "platform", icon: "Upload" },
 ]
 
@@ -191,28 +197,152 @@ export const experiences: Experience[] = [
 
 export const projects: Project[] = [
   {
+    id: "empire-developments",
+    name: "Empire Developments",
+    description: "Where Uniqueness Redefines Luxurious Living",
+    longDescription: "Experience the pinnacle of extravagance with Empire Development, Dubai, UAE, a premier luxury real estate developer. Immerse yourself in the epitome of opulence with our luxurious living spaces. Each residence is a testament to exquisite craftsmanship and meticulous attention to detail. From sprawling penthouses with panoramic views to lavish estates nestled in serene landscapes, we redefine what it means to live in luxury. At Empire Development, we specialize in crafting bespoke homes that cater to the most discerning tastes, ensuring an unparalleled lifestyle of sophistication and indulgence.",
+    tech: ["Kotlin", "XML", "REST APIs", "Firebase", "SqlLite", "Room"],
+    platforms: ["Android", "iOS"],
+    company: "Freelance Client",
+    projectIcon: "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/project_thumbnails%2Fempire_developments.png?alt=media",
+    bannerImage: "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fbanner%2Fempire_developments.jpg?alt=media",
+    storeLinks: [],
+    type: "Real Estate",
+    screenshots: {},
+    createdDate: "2025",
+    featured: true,
+  },
+  {
+    id: "portfolio-app",
+    name: "Portfolio App",
+    description: "A clean, beautiful and responsive portfolio template for all!",
+    longDescription: "A clean, beautiful and responsive portfolio template for all available for mobile, windows and web.",
+    tech: ["Flutter", "Dart", "Android", "iOS", "GIT", "Firebase"],
+    platforms: ["Android", "iOS", "Web"],
+    type: "Portfolio",
+    company: "Personal Project",
+    projectIcon: "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/project_thumbnails%2Fportfolio_app.png?alt=media",
+    bannerImage: "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fbanner%2Fportfolio_app.png?alt=media",
+    storeLinks: [
+      {
+        platform: "Android",
+        url: "https://play.google.com/store/apps/details?id=com.zeeshan.portfolio&utm_source=muhammad_zeeshan_portfolio&utm_medium=app&utm_campaign=marketing",
+        store: "Google Play",
+      },
+      {
+        platform: "web",
+        url: "https://zeeshan-ayaz.web.app/?utm_source=muhammad_zeeshan_portfolio&utm_medium=app&utm_campaign=marketing",
+        store: "Web",
+      },
+    ],
+    screenshots: {
+      Android: [
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2Fportfolio_app_1.jpeg?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2Fportfolio_app_2.jpeg?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2Fportfolio_app_3.jpeg?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2Fportfolio_app_4.jpeg?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2Fportfolio_app_5.jpeg?alt=media",
+      ],
+      iOS: [
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fios%2Fportfolio_app_1.jpeg?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fios%2Fportfolio_app_2.jpeg?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fios%2Fportfolio_app_3.jpeg?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fios%2Fportfolio_app_4.jpeg?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fios%2Fportfolio_app_5.jpeg?alt=media",
+      ],
+    },
+    createdDate: "Jan, 2024",
+    releasedDate: "Mar, 2024",
+    stats: {
+      downloads: "50+",
+      rating: 5,
+      reviews: "10+",
+    },
+    featured: true,
+  },
+  {
+    id: "padzee",
+    name: "Padzee - Online Clipboard",
+    description: "Online portable clipboard to help you take notes on the go. No Login, No Hassle!",
+    longDescription:
+      "Padzee is your pocket-sized digital notepad. This free online clipboard lets you jot down ideas, reminders, and anything else that pops into your head – instantly. Capture Thoughts: Quickly save notes, big or small.",
+    tech: ["Flutter", "Dart", "Android", "iOS", "REST APIs", "Firebase"],
+    platforms: ["Android", "iOS", "Web"],
+    type: "Clipboard, Online Notepad",
+    company: "Genetech Solutions",
+    projectIcon: "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/project_thumbnails%2Fpadzee.png?alt=media",
+    storeLinks: [
+      {
+        platform: "Android",
+        url: "https://play.google.com/store/apps/details?id=com.padzee.bit14&utm_source=muhammad_zeeshan_portfolio&utm_medium=app&utm_campaign=marketing",
+        store: "Google Play",
+      },
+      {
+        platform: "iOS",
+        url: "https://apps.apple.com/us/app/padzee-online-clipboard/id6743198785?utm_source=muhammad_zeeshan_portfolio&utm_medium=app&utm_campaign=marketing",
+        store: "App Store",
+      },
+      {
+        platform: "web",
+        url: "https://padzee.com/?utm_source=muhammad_zeeshan_portfolio&utm_medium=app&utm_campaign=marketing",
+        store: "Web",
+      },
+    ],
+    bannerImage: "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fbanner%2Fpadzee.png?alt=media",
+
+    screenshots: {
+      Android: [
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2Fpadzee_1.png?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2Fpadzee_2.png?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2Fpadzee_3.png?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2Fpadzee_4.png?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2Fpadzee_5.png?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2Fpadzee_6.png?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2Fpadzee_7.png?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2Fpadzee_8.png?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2Fpadzee_9.png?alt=media",
+      ],
+      iOS: [
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fios%2Fpadzee_1.jpg?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fios%2Fpadzee_2.jpg?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fios%2Fpadzee_3.jpg?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fios%2Fpadzee_4.jpg?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fios%2Fpadzee_5.jpg?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fios%2Fpadzee_6.jpg?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fios%2Fpadzee_7.jpg?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fios%2Fpadzee_8.jpg?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fios%2Fpadzee_9.jpg?alt=media",
+      ],
+    },
+    createdDate: "Jan, 2024",
+    releasedDate: "Mar, 2024",
+    stats: {
+      downloads: "50+",
+      rating: 5,
+      reviews: "10+",
+    },
+    featured: true,
+  },
+  {
     id: "ai-photobooth",
     name: "AI Photobooth",
-    description: "An innovative mobile application that combines cutting-edge AI technology with photo capturing.",
+    description: "Reimagine yourself. Generate AI-enhanced avatars with ease.",
     longDescription:
-      "Introducing AI Photobooth, your all-in-one solution for creating stunning AI-enhanced photos and avatars. AI Photobooth redefines the photo editing experience with its user-friendly interface, robust AI features, and unparalleled functionality. Whether you're a seasoned photography enthusiast or just venturing into the world of AI-enhanced images, AI Photobooth is designed to make your photo transformations secure, efficient, and stress-free.",
+      "AI Photobooth is an innovative mobile application that combines cutting-edge AI technology with photo capturing. The app allows users to take pictures using their device’s camera and then processes the images to generate AI-enhanced avatars and photos. By leveraging advanced image processing algorithms and AI models, the app transforms ordinary photos into visually appealing, AI-generated artwork.",
     tech: ["Flutter", "Dart", "REST APIs", "AI Integration", "Camera", "Image Processing"],
     platforms: ["Android", "iOS"],
     type: "AI/Photo App",
     company: "Genetech Solutions",
+    projectIcon: "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/project_thumbnails%2Fai_photobooth.png?alt=media",
+    bannerImage: "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fbanner%2Fai_photobooth.png?alt=media",
     storeLinks: [],
-    bannerImage: "/placeholder.svg?height=200&width=400",
     screenshots: {
-      Android: [
-        "/placeholder.svg?height=600&width=300",
-        "/placeholder.svg?height=600&width=300",
-        "/placeholder.svg?height=600&width=300",
-        "/placeholder.svg?height=600&width=300",
-      ],
       iOS: [
-        "/placeholder.svg?height=600&width=300",
-        "/placeholder.svg?height=600&width=300",
-        "/placeholder.svg?height=600&width=300",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fios%2Fai_photobooth_1.jpeg?alt=media&token=9fb4165d-e319-4afa-afb2-75b013a55ddd",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fios%2Fai_photobooth_2.jpeg?alt=media&token=9fb4165d-e319-4afa-afb2-75b013a55ddd",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fios%2Fai_photobooth_3.jpeg?alt=media&token=9fb4165d-e319-4afa-afb2-75b013a55ddd",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fios%2Fai_photobooth_4.jpeg?alt=media&token=9fb4165d-e319-4afa-afb2-75b013a55ddd",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fios%2Fai_photobooth_5.jpeg?alt=media&token=9fb4165d-e319-4afa-afb2-75b013a55ddd",
       ],
     },
     createdDate: "Jan, 2024",
@@ -227,12 +357,13 @@ export const projects: Project[] = [
   {
     id: "340b-price-guide",
     name: "340B The Price Guide",
-    description: "An app that helps estimate the price a patient will pay at a pharmacy.",
-    longDescription:
-      "340B Price Guide is a comprehensive application designed specifically for clinical staff to estimate patient pharmacy costs. The app provides accurate pricing information for 340B covered entities and includes features for staff enrollment, price calculations, and patient cost estimates. It's designed for healthcare professionals to streamline the pricing process and improve patient care.",
+    description: "340B Price Guide mobile is an application for HRSA 340B covered entities.",
+    longDescription: "340B Price Guide is an app that helps to estimate the price a patient will pay at a pharmacy. It is designed for clinical staff use rather than patients. It is free for staff members of CEs who have already enrolled online on behalf of their company.",
     tech: ["Flutter", "Dart", "REST APIs", "Healthcare", "Pricing Engine"],
     platforms: ["Android", "iOS"],
     company: "Genetech Solutions",
+    projectIcon: "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/project_thumbnails%2F340b_price_guide.png?alt=media",
+    bannerImage: "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fbanner%2F340b.png?alt=media",
     storeLinks: [
       {
         platform: "Android",
@@ -246,18 +377,17 @@ export const projects: Project[] = [
       },
     ],
     type: "Healthcare App",
-    bannerImage: "/placeholder.svg?height=200&width=400",
     screenshots: {
       Android: [
-        "/placeholder.svg?height=600&width=300",
-        "/placeholder.svg?height=600&width=300",
-        "/placeholder.svg?height=600&width=300",
-        "/placeholder.svg?height=600&width=300",
-      ],
-      iOS: [
-        "/placeholder.svg?height=600&width=300",
-        "/placeholder.svg?height=600&width=300",
-        "/placeholder.svg?height=600&width=300",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2F340b_1.png?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2F340b_2.png?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2F340b_3.png?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2F340b_4.png?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2F340b_5.png?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2F340b_6.png?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2F340b_7.png?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2F340b_8.png?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2F340b_9.png?alt=media",
       ],
     },
     createdDate: "Sep, 2023",
@@ -270,12 +400,50 @@ export const projects: Project[] = [
     featured: true,
   },
   {
+    id: "write",
+    name: "Write - Daily Note Organizer",
+    description: "Organize daily notes easily.",
+    longDescription: "Write is more than just a note-taking app; it\'s your digital notebook, designed to effortlessly capture your thoughts, ideas, and inspirations whenever they strike. With its intuitive interface and powerful features, Write empowers you to organize your life, unleash your creativity, and collaborate seamlessly with others.",
+    tech: ["Flutter", "Dart", "Android", "iOS", "Firebase"],
+    platforms: ["Android", "iOS", "Web"],
+    type: "Clipboard, Online Notepad",
+    company: "Personal Project",
+    projectIcon: "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/project_thumbnails%2Fwrite.png?alt=media",
+    bannerImage: "https://lh3.googleusercontent.com/PFv3nC4ZBf4QKbQswnw7EFp9mxYMQRFb-VlDWGhgbMr6THMOFIb8KQJl0mhy1muFbuk",
+    storeLinks: [
+      {
+        platform: "web",
+        url: "https://write-note-app.web.app/",
+        store: "Web",
+      },
+    ],
+    screenshots: {
+      Android: [
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2Fwrite_1.png?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2Fwrite_2.png?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2Fwrite_3.png?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2Fwrite_4.png?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2Fwrite_5.png?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2Fwrite_6.png?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2Fwrite_7.png?alt=media",
+      ],
+    },
+    createdDate: "Jan, 2024",
+    releasedDate: "Mar, 2024",
+    stats: {
+      downloads: "50+",
+      rating: 5,
+      reviews: "10+",
+    },
+    featured: true,
+  },
+  {
     id: "nutri-west",
     name: "Nutri-west",
-    description: "An e-commerce platform offering herbal, homeopathic, and general healthcare products.",
+    description: "E-commerce app that offers various healthcare products.",
     longDescription:
-      "Nutri-west is a comprehensive e-commerce platform that offers various herbal, homeopathic, and general healthcare products to improve health and overall well-being. The Nutri-West App allows both patients and providers to login, purchase products, manage their profiles, and access a wide range of health supplements and wellness products.",
-    tech: ["Flutter", "Dart", "REST APIs", "E-commerce", "Payment Gateway", "User Management"],
+      "Nutri-west is an e-commerce website that offers various Herbal, homeopathic, and general healthcare products to improve health and overall well-being. The Nutri-West App allows both patients and providers to login, purchase products, and manage their profiles.",
+    tech: ["Flutter", "Dart", "REST APIs", "E-commerce"],
     platforms: ["Android", "iOS"],
     company: "Genetech Solutions",
     storeLinks: [
@@ -291,15 +459,31 @@ export const projects: Project[] = [
       },
     ],
     type: "E-commerce App",
-    bannerImage: "/placeholder.svg?height=200&width=400",
+    projectIcon: "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/project_thumbnails%2Fnutriwest.png?alt=media",
+    bannerImage: "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fbanner%2Fnutriwest.webp?alt=media",
     screenshots: {
       Android: [
-        "/placeholder.svg?height=600&width=300",
-        "/placeholder.svg?height=600&width=300",
-        "/placeholder.svg?height=600&width=300",
-        "/placeholder.svg?height=600&width=300",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2Fnutriwest_1.png?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2Fnutriwest_2.png?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2Fnutriwest_3.png?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2Fnutriwest_4.png?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2Fnutriwest_5.png?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2Fnutriwest_6.png?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2Fnutriwest_7.png?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2Fnutriwest_8.png?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2Fnutriwest_9.png?alt=media",
       ],
-      iOS: [], // Assuming no specific iOS screenshots were provided for this project
+      iOS: [
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fios%2Fnutriwest_1.png?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fios%2Fnutriwest_2.png?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fios%2Fnutriwest_3.png?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fios%2Fnutriwest_4.png?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fios%2Fnutriwest_5.png?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fios%2Fnutriwest_6.png?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fios%2Fnutriwest_7.png?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fios%2Fnutriwest_8.png?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fios%2Fnutriwest_9.png?alt=media",
+      ],
     },
     createdDate: "Jun, 2023",
     releasedDate: "Aug, 2023",
@@ -307,13 +491,15 @@ export const projects: Project[] = [
   },
   {
     id: "brokerware",
-    name: "Brokerware",
-    description: "Revolutionizing the global transportation landscape with autonomous solutions.",
-    longDescription:
-      "Brokerware is transforming the transportation industry by providing cutting-edge solutions for logistics and freight management. The platform aims to foster a more efficient and sustainable future where seamless integration of transportation services is accessible to all stakeholders in the supply chain.",
-    tech: ["Flutter", "Dart", "REST APIs", "GPS", "Real-time Tracking"],
+    name: "Brokerware, 3pl Systems Inc",
+    description: "Brokerware is a world-class TMS platform that now has a native mobile app.",
+    longDescription: "Revolutionizing the global transportation landscape with autonomous solutions, aiming to foster a more efficient, and sustainable future, where seamless integration is accessible to all.",
+    tech: ["Flutter", "Dart", "REST APIs", "Real-time Tracking"],
     platforms: ["Android", "iOS"],
     company: "Genetech Solutions",
+    type: "Logistics",
+    bannerImage: "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fbanner%2Fbrokerware.png?alt=media",
+    projectIcon: "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/project_thumbnails%2Fbrokerware.png?alt=media",
     storeLinks: [
       {
         platform: "Android",
@@ -326,15 +512,10 @@ export const projects: Project[] = [
         store: "App Store",
       },
     ],
-    type: "Transportation App",
-    bannerImage: "/placeholder.svg?height=200&width=400",
     screenshots: {
-      Android: [
-        "/placeholder.svg?height=600&width=300",
-        "/placeholder.svg?height=600&width=300",
-        "/placeholder.svg?height=600&width=300",
+      android: [
+
       ],
-      iOS: [], // Assuming no specific iOS screenshots were provided for this project
     },
     createdDate: "Mar, 2023",
     releasedDate: "May, 2023",
@@ -344,11 +525,13 @@ export const projects: Project[] = [
     id: "thaqalayn-kids",
     name: "Thaqalayn Kids",
     description: "An animated story application for children with educational content and games.",
-    longDescription:
-      "Thaqalayn Kids is an engaging animated story application designed specifically for children. The app features interactive animated videos that help build character and moral values, along with multiple educational games that make learning fun and engaging for young minds.",
-    tech: ["Flutter", "Dart", "REST APIs", "Animation", "Video Streaming", "Games"],
+    longDescription: "Thaqalayn Kids is an animated story application for children where they can listen to animated videos to build their character and play multiple games.",
+    tech: ["Flutter", "Dart", "REST APIs", "Animation", "Games"],
     platforms: ["Android", "iOS"],
     company: "Freelance Client",
+    type: "Educational App",
+    projectIcon: "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/project_thumbnails%2Fthaqalayn_kids.png?alt=media",
+    bannerImage: "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fbanner%2Fthaqalayn_kids.png?alt=media",
     storeLinks: [
       {
         platform: "Android",
@@ -361,29 +544,116 @@ export const projects: Project[] = [
         store: "App Store",
       },
     ],
-    type: "Educational App",
-    bannerImage: "/placeholder.svg?height=200&width=400",
     screenshots: {
       Android: [
-        "/placeholder.svg?height=600&width=300",
-        "/placeholder.svg?height=600&width=300",
-        "/placeholder.svg?height=600&width=300",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2Fkids_app_1.png?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2Fkids_app_2.png?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2Fkids_app_3.png?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2Fkids_app_4.png?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2Fkids_app_5.png?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2Fkids_app_6.png?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2Fkids_app_7.png?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2Fkids_app_8.png?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2Fkids_app_9.png?alt=media",
       ],
-      iOS: [], // Assuming no specific iOS screenshots were provided for this project
+      iOS: [
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fios%2Fkids_app_1.png?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fios%2Fkids_app_2.png?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fios%2Fkids_app_3.png?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fios%2Fkids_app_4.png?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fios%2Fkids_app_5.png?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fios%2Fkids_app_6.png?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fios%2Fkids_app_7.png?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fios%2Fkids_app_8.png?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fios%2Fkids_app_9.png?alt=media",
+      ],
     },
     createdDate: "Jan, 2023",
     releasedDate: "Mar, 2023",
-    featured: false,
+    featured: true,
+  },
+  {
+    id: "multi-timer-stopwatch",
+    name: "Multi Timer Stopwatch",
+    description: "Multi Timer Stopwatch. Create and use multiple timers simultaneously.",
+    longDescription: "Multi Timer Stopwatch. Create and use multiple timers simultaneously.",
+    tech: ["Android", "Kotlin", "XML", "Firebase", "SqlLite", "Room"],
+    platforms: ["Android"],
+    company: "Genetech Solutions",
+    type: "Stopwatch",
+    projectIcon: "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/project_thumbnails%2Fmulti_timer.png?alt=media",
+    bannerImage: "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fbanner%2Fmulti_timer.jpg?alt=media",
+    storeLinks: [
+      {
+        platform: "Android",
+        url: "https://play.google.com/store/apps/details?id=com.bit14.multicountdowntimer&utm_source=muhammad_zeeshan_portfolio&utm_medium=app&utm_campaign=marketing",
+        store: "Google Play",
+      },
+    ],
+    screenshots: {
+      Android: [
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2Fmct_1.jpg?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2Fmct_2.jpg?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2Fmct_3.jpg?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2Fmct_4.jpg?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2Fmct_5.jpg?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2Fmct_6.jpg?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2Fmct_7.jpg?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2Fmct_8.jpg?alt=media",
+      ],
+    },
+    createdDate: "Jan, 2023",
+    releasedDate: "Mar, 2023",
+    featured: true,
+  },
+  {
+    id: "amfs-online-mobile",
+    name: "AMFS Online Mobile Application",
+    description: "An educational app for students of Al Musleh Foundation School.",
+    longDescription: "AMFS Online is an educational app where students can sharpen their skills, practice exercise and test themselves. Use can simply sign-in it with your GR #. It is designed for our kids to stay connected with their teachers while remaining at home.",
+    tech: ["Android", "Kotlin", "XML", "Firebase", "SqlLite", "Room"],
+    platforms: ["Android"],
+    company: "Freelance Client",
+    type: "Education",
+    projectIcon: "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/project_thumbnails%2Famfs.png?alt=media",
+    bannerImage: "https://lh3.googleusercontent.com/wtA8W-WbkhAzJz6BX0RciTBwQEAQdW3OMi_WM36wev9tWaSCS3Q7v-t3CD6zo3PFU1I",
+    storeLinks: [
+      {
+        platform: "Android",
+        url: "https://play.google.com/store/apps/details?id=com.zeeshan.amfsonline&utm_source=muhammad_zeeshan_portfolio&utm_medium=app&utm_campaign=marketing",
+        store: "Google Play",
+      },
+    ],
+    screenshots: {
+      Android: [
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2Famfs_online_1.jpg?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2Famfs_online_2.jpg?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2Famfs_online_3.jpg?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2Famfs_online_4.jpg?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2Famfs_online_5.jpg?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2Famfs_online_6.jpg?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2Famfs_online_7.jpg?alt=media",
+      ],
+    },
+    stats: {
+      downloads: "500+",
+      rating: 5,
+      reviews: "21+",
+    },
+    createdDate: "Mar, 2020",
+    releasedDate: "Jul, 2020",
+    featured: true,
   },
   {
     id: "pocket-mpos",
     name: "Pocket MPOS",
-    description: "Customized software solution for small and medium enterprises business management.",
-    longDescription:
-      "Pocket MPOS is a comprehensive business management solution designed specifically for small and medium enterprises. The application includes complete solutions for business management, from purchase to sales, inventory management to finance management, providing everything needed to run a successful business.",
-    tech: ["Kotlin", "XML", "REST APIs", "Firebase", "Business Logic"],
+    description: "Customized POS software solution for current business need.",
+    longDescription: "Pocket MPOS is the customized software solution for current business needs. This application is especially designed for small and medium enterprises. It includes the complete solution for business management. From purchase to sales, inventory management to finance management.",
+    tech: ["Kotlin", "XML", "REST APIs", "Firebase", "SqlLite", "Room"],
     platforms: ["Android"],
     company: "Minhasoft",
+    projectIcon: "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/project_thumbnails%2Fpocket_pos.png?alt=media",
+    bannerImage: "https://lh3.googleusercontent.com/VsTaZBeR3kuFlyfZJwthqorH4jw4Z0S1kRfHQh6Y4EPu4b9KO2qIIt5fU7g7PW0_GCPN",
     storeLinks: [
       {
         platform: "Android",
@@ -391,18 +661,108 @@ export const projects: Project[] = [
         store: "Google Play",
       },
     ],
-    type: "Business App",
-    bannerImage: "/placeholder.svg?height=200&width=400",
+    type: "POS",
     screenshots: {
       Android: [
-        "/placeholder.svg?height=600&width=300",
-        "/placeholder.svg?height=600&width=300",
-        "/placeholder.svg?height=600&width=300",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2Fmpos_1.jpg?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2Fmpos_2.jpg?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2Fmpos_3.jpg?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2Fmpos_4.jpg?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2Fmpos_5.jpg?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2Fmpos_6.jpg?alt=media",
       ],
+    },
+    stats: {
+      downloads: "100+"
     },
     createdDate: "Oct, 2022",
     releasedDate: "Dec, 2022",
-    featured: false,
+    featured: true,
+  },
+  {
+    id: "protein-district",
+    name: "Protein District",
+    description: "Your friendly neighborhood nutrition store! The first guilt-free concept store in GCC! Anything nutrition? We've got you!",
+    longDescription: "Protein District is a newly established company striving to keep you healthy. We are the UAE first ever to bring you all your favorite healthy high protein snacks and the best healthy alternatives to achieve your fitness goals, pretty much in one place. Enjoy our range of products that help you to get fit and guilt free.",
+    tech: ["Kotlin", "XML", "REST APIs", "Firebase", "SqlLite", "Room"],
+    platforms: ["Android"],
+    company: "Minhasoft",
+    projectIcon: "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/project_thumbnails%2Fprotein_district.png?alt=media",
+    storeLinks: [
+      {
+        platform: "Android",
+        url: "https://play.google.com/store/apps/details?id=pd.app&utm_source=muhammad_zeeshan_portfolio&utm_medium=app&utm_campaign=marketing",
+        store: "Google Play",
+      },
+    ],
+    type: "E-Commerce",
+    screenshots: {},
+    stats: {
+      downloads: "100+"
+    },
+    createdDate: "Oct, 2022",
+    releasedDate: "Dec, 2022",
+    featured: true,
+  },
+  {
+    id: "branddose",
+    name: "Branddose",
+    description: "An online retailer of high-end perfumes and other luxurious commodities",
+    longDescription: "Branddose aims to offer the best in original brands, through a service that has the interest of our customers at heart. We strive for high quality combined with low prices. Our staff members are highly trained and able to answer any questions you might have with regards to our service or your orders.",
+    tech: ["Kotlin", "XML", "REST APIs", "Firebase", "SqlLite", "Room"],
+    platforms: ["Android"],
+    company: "Minhasoft",
+    projectIcon: "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/project_thumbnails%2Fbranddose.png?alt=media",
+    bannerImage: "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fbanner%2Fbranddose.png?alt=media",
+    storeLinks: [
+      {
+        platform: "Android",
+        url: "https://play.google.com/store/apps/details?id=com.branddose.app&utm_source=muhammad_zeeshan_portfolio&utm_medium=app&utm_campaign=marketing",
+        store: "Google Play",
+      },
+    ],
+    type: "E-Commerce",
+    screenshots: {
+      Android: [
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2Fbranddose_1.jpg?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2Fbranddose_2.jpg?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2Fbranddose_3.jpg?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2Fbranddose_4.jpg?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2Fbranddose_5.jpg?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2Fbranddose_6.jpg?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2Fbranddose_7.jpg?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2Fbranddose_8.jpg?alt=media",
+      ],
+    },
+    stats: {
+      downloads: "100+"
+    },
+    createdDate: "Oct, 2022",
+    releasedDate: "Dec, 2022",
+    featured: true,
+  },
+  {
+    id: "razpay",
+    name: "Razpay Digital Wallet",
+    description: "",
+    longDescription: "Introducing Razpay, your all-in-one solution for seamlessly managing and safeguarding your cryptocurrency assets. Razpay redefines the crypto wallet experience with its user-friendly interface, robust security features, and unparalleled functionality. Whether you're a seasoned crypto enthusiast or just venturing into the world of digital currencies, Razpay is designed to make your cryptocurrency transactions secure, efficient, and stress-free.",
+    tech: ["Kotlin", "XML", "REST APIs", "Firebase", "SqlLite", "Room"],
+    platforms: ["Android"],
+    company: "Freelance Client",
+    projectIcon: "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/project_thumbnails%2Frazpay_wallet.png?alt=media",
+    storeLinks: [],
+    github: "https://github.com/zeeshanayaz/razpay-wallet-app?utm_source=muhammad_zeeshan_portfolio&utm_medium=app&utm_campaign=marketing",
+    type: "E-Commerce",
+    screenshots: {
+      Android: [
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2Frazpay_1.png?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2Frazpay_2.png?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2Frazpay_3.png?alt=media",
+        "https://firebasestorage.googleapis.com/v0/b/zeeshan-ayaz.appspot.com/o/mockups%2Fandroid%2Frazpay_4.jpg?alt=media",
+      ],
+    },
+    createdDate: "2024",
+    featured: true,
   },
 ]
 
@@ -445,11 +805,10 @@ export const education: Education[] = [
 ]
 
 export const achievementsData = [
-  "Launched 5+ apps with 4.5+ average rating on both app stores",
+  "Launched 15+ apps with 4+ average rating on both app stores",
   "Expert in both Android and iOS development",
   "Proficient in multiple programming languages and frameworks",
-  "Successfully mentored junior developers",
-  "Reduced post-release bugs by 50% through automated testing",
+  "Reduced post-release bugs by 50% through unit and manual testing",
   "Published open-source packages used by the Flutter community",
 ]
 
@@ -462,7 +821,7 @@ export const services: Service[] = [
     icon: "Smartphone",
     features: [
       "Native Android Development (Kotlin/Java)",
-      "Cross-platform Development (Flutter)",
+      "Cross-platform Development (Flutter, React Native)",
       "iOS Development",
       "API Integration",
       "Database Design & Implementation",
@@ -502,14 +861,14 @@ export const services: Service[] = [
 
 export const achievements: Achievement[] = [
   {
-    title: "5+ Apps Published",
+    title: "15+ Apps Published",
     description:
-      "Successfully launched and published over 5 mobile applications on both Google Play Store and Apple App Store",
+      "Successfully launched and published over 15 mobile applications on both Google Play Store and Apple App Store",
     icon: "Trophy",
   },
   {
-    title: "4.5+ Average Rating",
-    description: "Maintained an average rating of 4.5+ stars across all published applications",
+    title: "4+ Average Rating",
+    description: "Maintained an average rating of 4+ stars across all published applications",
     icon: "Star",
   },
   {

@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation"
-import { ProjectDetailClient } from "@/components/project-detail-client"
+import { ProjectDetailClient } from "@/app/projects/[slug]/project-detail-client"
 import { projects } from "@/data/portfolio-data"
 
 interface ProjectPageProps {
@@ -15,7 +15,8 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: ProjectPageProps) {
-  const project = projects.find((p) => p.id === params.slug)
+  const resolvedParams = await params
+  const project = projects.find((p) => p.id === resolvedParams.slug)
 
   if (!project) {
     return {
@@ -29,8 +30,9 @@ export async function generateMetadata({ params }: ProjectPageProps) {
   }
 }
 
-export default function ProjectPage({ params }: ProjectPageProps) {
-  const project = projects.find((p) => p.id === params.slug)
+export default async function ProjectPage({ params }: ProjectPageProps) {
+  const resolvedParams = await params
+  const project = projects.find((p) => p.id === resolvedParams.slug)
 
   if (!project) {
     notFound()
