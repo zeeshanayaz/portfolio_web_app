@@ -328,6 +328,35 @@ export default function Portfolio() {
                 <p className="text-slate-600 dark:text-slate-300 leading-relaxed">{personalInfo.about}</p>
               </div>
 
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div className="bg-white dark:bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 shadow-xl border border-slate-200/50 dark:border-slate-700/50">
+                  <h4 className="text-lg font-semibold text-slate-900 dark:text-white mb-4 flex items-center">
+                    <GraduationCap className="w-5 h-5 mr-3 text-green-500" />
+                    Education
+                  </h4>
+                  {education.slice(0, 1).map((edu, index) => (
+                    <div key={index}>
+                      <h5 className="font-medium text-slate-900 dark:text-white text-sm">{edu.degree}</h5>
+                      <p className="text-slate-600 dark:text-slate-300 text-sm">
+                        {edu.institution} • {edu.year}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="bg-white dark:bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 shadow-xl border border-slate-200/50 dark:border-slate-700/50">
+                  <h4 className="text-lg font-semibold text-slate-900 dark:text-white mb-4 flex items-center">
+                    <MapPin className="w-5 h-5 mr-3 text-red-500" />
+                    Contact Info
+                  </h4>
+                  <div className="space-y-2 text-sm">
+                    <p className="text-slate-600 dark:text-slate-300">{personalInfo.email}</p>
+                    <p className="text-slate-600 dark:text-slate-300">{personalInfo.phone}</p>
+                    <p className="text-slate-600 dark:text-slate-300">{personalInfo.location}</p>
+                  </div>
+                </div>
+              </div>
+
               <div className="bg-white dark:bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-slate-200/50 dark:border-slate-700/50">
                 <h4 className="text-lg font-semibold text-slate-900 dark:text-white mb-6 flex items-center">
                   <Trophy className="w-5 h-5 mr-3 text-yellow-500" />
@@ -344,6 +373,8 @@ export default function Portfolio() {
                   ))}
                 </div>
               </div>
+
+
             </div>
 
             <div className="space-y-8">
@@ -372,35 +403,6 @@ export default function Portfolio() {
                       </div>
                     )
                   })}
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div className="bg-white dark:bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 shadow-xl border border-slate-200/50 dark:border-slate-700/50">
-                  <h4 className="text-lg font-semibold text-slate-900 dark:text-white mb-4 flex items-center">
-                    <GraduationCap className="w-5 h-5 mr-3 text-green-500" />
-                    Education
-                  </h4>
-                  {education.slice(0, 1).map((edu, index) => (
-                    <div key={index}>
-                      <h5 className="font-medium text-slate-900 dark:text-white text-sm">{edu.degree}</h5>
-                      <p className="text-slate-600 dark:text-slate-300 text-sm">
-                        {edu.institution} • {edu.year}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="bg-white dark:bg-slate-800/50 backdrop-blur-sm rounded-2xl p-6 shadow-xl border border-slate-200/50 dark:border-slate-700/50">
-                  <h4 className="text-lg font-semibold text-slate-900 dark:text-white mb-4 flex items-center">
-                    <MapPin className="w-5 h-5 mr-3 text-red-500" />
-                    Contact Info
-                  </h4>
-                  <div className="space-y-2 text-sm">
-                    <p className="text-slate-600 dark:text-slate-300">{personalInfo.email}</p>
-                    <p className="text-slate-600 dark:text-slate-300">{personalInfo.phone}</p>
-                    <p className="text-slate-600 dark:text-slate-300">{personalInfo.location}</p>
-                  </div>
                 </div>
               </div>
             </div>

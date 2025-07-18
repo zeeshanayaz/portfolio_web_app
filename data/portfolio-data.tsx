@@ -128,10 +128,14 @@ export const skills: Skill[] = [
   { name: "Android Development", category: "platform", icon: "Smartphone" },
   { name: "iOS Development", category: "platform", icon: "Smartphone" },
   { name: "REST APIs", category: "tool", icon: "Globe" },
+  { name: "Postman", category: "tool", icon: "Zap" },
   { name: "Figma", category: "tool", icon: "Palette" },
+  { name: "Adobe XD", category: "tool", icon: "Palette" },
   { name: "Cross-platform Development", category: "framework", icon: "Monitor" },
   { name: "Play Store Deployment", category: "platform", icon: "Upload" },
   { name: "App Store Deployment", category: "platform", icon: "Upload" },
+  { name: "Jira", category: "tool", icon: "GitBranch" },
+  { name: "Basecamp", category: "tool", icon: "GitBranch" },
 ]
 
 export const experiences: Experience[] = [
